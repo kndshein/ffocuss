@@ -247,7 +247,6 @@
   margin-inline-start: 0 !important;
 }
 
-#urlbar .urlbar-input-box,
 .chromeclass-toolbar-additional,
 #PanelUI-menu-button,
 #tracking-protection-icon-container,
@@ -258,8 +257,6 @@
   transition: opacity 0.2s ease-out;
 }
 
-#urlbar[focused='true'] .urlbar-input-box,
-#urlbar .urlbar-input-box:hover,
 .chromeclass-toolbar-additional:hover,
 #PanelUI-menu-button:hover,
 #tracking-protection-icon-container:hover,
