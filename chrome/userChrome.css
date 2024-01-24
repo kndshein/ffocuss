@@ -18,6 +18,10 @@
   display: none !important;
 } /*  Removes the x-button from the tabs  */
 
+#star-button-box {
+  display: none !important;
+} /* Removes the bookmark star */
+
 /*  #tabs-newtab-button, #new-tab-button{opacity: 0 !important}  /*  Hide newtab button  */
 
 /*  Custom background -- Also check userContent.css  */
