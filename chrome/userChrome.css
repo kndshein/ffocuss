@@ -114,44 +114,52 @@
 #nav-bar {
   margin-left: 3px;
 }
+
 .tab-background,
 .tab-stack {
   min-height: calc(var(--TabsHeight) * 0.8px) !important;
 }
-
 .tab-background {
   border-radius: 10em !important;
   box-shadow: none !important;
   margin: var(--TabsYMargin) 0 !important;
 }
-
 .tabbrowser-tab {
   opacity: var(--OpacityMin);
 }
-
 .tabbrowser-tab:not([pinned]) {
   transition: min-width 100ms ease-out, max-width 100ms ease-out,
     opacity 0.2s ease-out !important;
 }
-
 .tabbrowser-tab:not([visuallyselected], [multiselected]) {
   filter: grayscale(100%);
 }
-
 .tabbrowser-tab:is([visuallyselected], [multiselected]),
 .tabbrowser-tab:hover {
   filter: grayscale(0);
   opacity: 1;
 }
-
 .tabbrowser-tab:is([visuallyselected], [multiselected]) .tab-background {
   border: 1px solid color-mix(in srgb, var(--toolbar-color) 40%, transparent);
   background-color: transparent !important;
 }
-
 .tabbrowser-tab:is([visuallyselected], [multiselected]):hover .tab-background {
   border: 1px solid color-mix(in srgb, var(--toolbar-color) 60%, transparent);
 }
+
+.tab-secondary-label {
+  display: none !important;
+}
+.tabbrowser-tab[soundplaying] .tab-background {
+  border: 1px solid red !important;
+}
+.tabbrowser-tab[soundplaying-scheduledremoval] .tab-background {
+  border: 1px dashed orange !important;
+}
+.tabbrowser-tab[soundplaying] {
+  filter: unset !important;
+}
+/*TODO: Add designs for various sound tab-icon-sound-label  */
 
 /*  Removes rounding from the top corners,   */
 #navigator-toolbox {
@@ -573,6 +581,16 @@ spacer {
 .bookmark-item > .toolbarbutton-icon {
   height: 12px !important;
   width: 12px !important;
+}
+
+/* Bookmark toolbar separator */
+#PlacesToolbarItems > toolbarseparator::before {
+  border-image-source: linear-gradient(
+    transparent 10%,
+    var(--toolbarseparator-color) 50%,
+    var(--toolbarseparator-color) 50%,
+    transparent 90%
+  );
 }
 
 /*  Rounded corner in pages  */ /*  layout.css.has-selector.enabled  */
