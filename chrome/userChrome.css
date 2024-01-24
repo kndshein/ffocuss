@@ -35,6 +35,7 @@
   --TabsYMargin: 8px;
   --TabsBorder: 8; /*  Doesn't do anything on small layout  */ /*  Default: 8  */
   --OpacityMin: 0.5;
+  --PopupGap: 8px;
   --NavbarHeightSmall: calc(
     var(--TabsHeight) + var(--TabsBorder)
   ); /*  Only on small layout  */ /*  Default: calc(var(--TabsHeight) + var(--TabsBorder))  */ /*  Default as a number: 44  */
@@ -720,8 +721,9 @@ findbar .close-icon {
 /* Menu popup margins */
 .toolbar-menupopup,
 #unified-extensions-panel,
-#appMenu-popup {
-  margin-top: 0.5em !important;
+#appMenu-popup,
+#customizationui-widget-panel {
+  margin-top: var(--PopupGap) !important;
 }
 /* [position='bottomright topright'] {
   --panel-border-radius: 0 5px 5px 5px !important;
