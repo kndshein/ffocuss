@@ -7,11 +7,11 @@
 #reload-button,
 #stop-button {
   display: none !important;
-} /*  Removes the reload/stop button 
+} /*  Removes the reload/stop button */
 
 #star-button-box {
-    display: none !important;
-  } /* Removes the bookmark star */
+  display: none !important;
+} /* Removes the bookmark star */
 
 #reader-mode-button {
   display: none !important;
@@ -28,15 +28,11 @@
 
 /*  #tabs-newtab-button, #new-tab-button{opacity: 0 !important}  /*  Hide newtab button  */
 
-/*  Custom background -- Also check userContent.css  */
-#navigator-toolbox {
-  background-image: url('./Background.png'), url('./NavbarBackground.png');
-}
-
 :root {
   --tab-border-radius: 3px !important; /*  Tab border radius -- Changes the tabs rounding  */ /*  Default: 3px  */
   --NavbarWidth: 43; /*  Default values: 36 - 43  */
   --TabsHeight: 36; /*  Minimum: 30  */ /*  Default: 36  */
+  --TabsYMargin: 8px;
   --TabsBorder: 8; /*  Doesnt do anything on small layout  */ /*  Default: 8  */
   --OpacityMin: 0.5;
   --NavbarHeightSmall: calc(
@@ -120,7 +116,37 @@
 }
 .tab-background,
 .tab-stack {
-  min-height: calc(var(--TabsHeight) * 1px) !important;
+  min-height: calc(var(--TabsHeight) * 0.8px) !important;
+}
+
+.tab-background {
+  border-radius: 10em !important;
+  box-shadow: none !important;
+  margin: var(--TabsYMargin) 0 !important;
+}
+
+.tabbrowser-tab:not([pinned]) {
+  transition: min-width 100ms ease-out, max-width 100ms ease-out,
+    opacity 0.2s ease-out !important;
+}
+
+.tabbrowser-tab:not([visuallyselected], [multiselected]) {
+  filter: grayscale(100%);
+}
+
+.tabbrowser-tab:is([visuallyselected], [multiselected]),
+.tabbrowser-tab:hover {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+.tabbrowser-tab:is([visuallyselected], [multiselected]) .tab-background {
+  border: 1px solid color-mix(in srgb, var(--toolbar-color) 40%, transparent);
+  background-color: transparent !important;
+}
+
+.tabbrowser-tab:is([visuallyselected], [multiselected]):hover .tab-background {
+  border: 1px solid color-mix(in srgb, var(--toolbar-color) 60%, transparent);
 }
 
 /*  Removes rounding from the top corners,   */
@@ -473,7 +499,7 @@ spacer {
   margin-inline-start: 0px !important;
 }
 
-/*  Makes the space between the reload button and the urlbar less akwardly large  */
+/*  Makes the space between the reload button and the urlbar less awkwardly large  */
 #urlbar-container {
   margin-left: 1px !important;
 }
