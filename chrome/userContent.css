@@ -90,7 +90,7 @@
   }
 
   /*  Newtab  */
-  @-moz-document url("about:home"), url("about:newtab") {
+  /* @-moz-document url("about:home"), url("about:newtab") {
     .search-wrapper .search-handoff-button .fake-caret {
       top: 13px !important;
       inset-inline-start: 48px !important;
@@ -154,7 +154,7 @@
       align-items: center;
       display: flex;
     }
-  }
+  } */
 }
 
 @-moz-document url("about:privatebrowsing") {

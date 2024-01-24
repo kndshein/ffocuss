@@ -33,7 +33,7 @@
   --NavbarWidth: 43; /*  Default values: 36 - 43  */
   --TabsHeight: 36; /*  Minimum: 30  */ /*  Default: 36  */
   --TabsYMargin: 8px;
-  --TabsBorder: 8; /*  Doesnt do anything on small layout  */ /*  Default: 8  */
+  --TabsBorder: 8; /*  Doesn't do anything on small layout  */ /*  Default: 8  */
   --OpacityMin: 0.5;
   --NavbarHeightSmall: calc(
     var(--TabsHeight) + var(--TabsBorder)
@@ -123,6 +123,10 @@
   border-radius: 10em !important;
   box-shadow: none !important;
   margin: var(--TabsYMargin) 0 !important;
+}
+
+.tabbrowser-tab {
+  opacity: var(--OpacityMin);
 }
 
 .tabbrowser-tab:not([pinned]) {
@@ -547,6 +551,35 @@ spacer {
   padding-right: 8px !important;
 }
 
+/* Bookmarks */
+.bookmark-item {
+  padding: 0.3em 0.7em !important;
+  border-radius: 10em !important;
+}
+
+.bookmark-item > .toolbarbutton-icon,
+.bookmark-item > .toolbarbutton-text {
+  opacity: 0.5;
+  filter: grayscale(100%);
+  transition: opacity 0.2s ease-out;
+}
+
+.bookmark-item:hover > .toolbarbutton-icon,
+.bookmark-item:hover > .toolbarbutton-text {
+  opacity: 1;
+  filter: grayscale(0);
+}
+
+.bookmark-item > .toolbarbutton-icon {
+  height: 12px !important;
+  width: 12px !important;
+}
+
+/* Bookmark folder menu margin */
+.toolbar-menupopup {
+  margin-top: 0.5em !important;
+}
+
 /*  Rounded corner in pages  */ /*  layout.css.has-selector.enabled  */
 #main-window:has(#navigator-toolbox[style='']) #tabbrowser-tabpanels,
 :not([sizemode='fullscreen']) #tabbrowser-tabpanels {
@@ -560,11 +593,11 @@ spacer {
   border-top-right-radius: 10px !important;
 }
 #navigator-toolbox {
-  padding-bottom: 10px;
+  padding-bottom: 14px;
 }
 [BookmarksToolbarOverlapsBrowser]
   #navigator-toolbox:has(#PersonalToolbar:is([collapsed='false'])) {
-  padding-bottom: 0px;
+  padding-bottom: 4px;
 } /* Targets when 'Bookmarks Toolbar > Only Show on New Tab' is used */
 [inFullscreen] #tabbrowser-tabpanels,
 [inFullscreen] .browserStack > browser {
@@ -682,9 +715,6 @@ findbar .close-icon {
 }
 [part='content'] {
   border: none !important;
-}
-.toolbarbutton-1[open] {
-  --toolbarbutton-border-radius: 4px 4px 0 0 !important;
 }
 
 [class*='identity-color'] > * > * .tab-context-line {
