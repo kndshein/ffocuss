@@ -128,6 +128,7 @@
 .tabbrowser-tab {
   opacity: var(--OpacityMin);
 }
+/*TODO: This overrides the transition applied by FF for drag-and-drop feature, fix needed.*/
 .tabbrowser-tab:not([pinned]) {
   transition: min-width 100ms ease-out, max-width 100ms ease-out,
     opacity 0.2s ease-out !important;
@@ -603,8 +604,11 @@ spacer {
   border-top-left-radius: 10px !important;
   border-top-right-radius: 10px !important;
 }
-#navigator-toolbox {
-  padding-bottom: 14px;
+#navigator-toolbox:has(#PersonalToolbar:is([collapsed='true'])) {
+  padding-bottom: 10px;
+}
+#navigator-toolbox:has(#PersonalToolbar:is([collapsed='false'])) {
+  padding-bottom: 15px;
 }
 [BookmarksToolbarOverlapsBrowser]
   #navigator-toolbox:has(#PersonalToolbar:is([collapsed='false'])) {
