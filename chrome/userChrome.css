@@ -491,6 +491,10 @@
 #navigator-toolbox {
   padding-bottom: 10px;
 }
+[BookmarksToolbarOverlapsBrowser]
+  #navigator-toolbox:has(#PersonalToolbar:is([collapsed='false'])) {
+  padding-bottom: 0px;
+} /* Targets when 'Bookmarks Toolbar > Only Show on New Tab' is used */
 [inFullscreen] #tabbrowser-tabpanels,
 [inFullscreen] .browserStack > browser {
   border-radius: 0 !important;
