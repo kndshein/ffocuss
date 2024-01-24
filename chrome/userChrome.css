@@ -9,6 +9,14 @@
   display: none !important;
 } /*  Removes the reload/stop button 
 
+#star-button-box {
+    display: none !important;
+  } /* Removes the bookmark star */
+
+#reader-mode-button {
+  display: none !important;
+} /* Removes reader view button */
+
 #back-button,
 #forward-button {
   display: none !important;
@@ -17,10 +25,6 @@
 .tab-close-button {
   display: none !important;
 } /*  Removes the x-button from the tabs  */
-
-#star-button-box {
-  display: none !important;
-} /* Removes the bookmark star */
 
 /*  #tabs-newtab-button, #new-tab-button{opacity: 0 !important}  /*  Hide newtab button  */
 
@@ -34,6 +38,7 @@
   --NavbarWidth: 43; /*  Default values: 36 - 43  */
   --TabsHeight: 36; /*  Minimum: 30  */ /*  Default: 36  */
   --TabsBorder: 8; /*  Doesnt do anything on small layout  */ /*  Default: 8  */
+  --OpacityMin: 0.5;
   --NavbarHeightSmall: calc(
     var(--TabsHeight) + var(--TabsBorder)
   ); /*  Only on small layout  */ /*  Default: calc(var(--TabsHeight) + var(--TabsBorder))  */ /*  Default as a number: 44  */
@@ -193,6 +198,7 @@
 #urlbar-background {
   border: none !important;
   outline: none !important;
+  background-color: var(--toolbar-field-background-color) !important;
   transition: 0.15s !important;
 }
 
@@ -201,6 +207,28 @@
   > #tabbrowser-arrowscrollbox
   > .tabbrowser-tab[first-visible-unpinned-tab] {
   margin-inline-start: 0 !important;
+}
+
+#urlbar .urlbar-input-box,
+.chromeclass-toolbar-additional,
+#PanelUI-menu-button,
+#tracking-protection-icon-container,
+#identity-icon-box,
+#identity-permission-box,
+#page-action-buttons {
+  opacity: var(--OpacityMin);
+  transition: opacity 0.2s ease-out;
+}
+
+#urlbar[focused='true'] .urlbar-input-box,
+#urlbar .urlbar-input-box:hover,
+.chromeclass-toolbar-additional:hover,
+#PanelUI-menu-button:hover,
+#tracking-protection-icon-container:hover,
+#identity-icon-box:hover,
+#identity-permission-box:hover,
+#page-action-buttons:hover {
+  opacity: 1;
 }
 
 /*  X-button on the tabs  */
