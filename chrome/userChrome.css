@@ -411,6 +411,11 @@
   appearance: none !important;
 }
 
+/* The vertical lines in overflow menu of the tabs -- this is a bit heavy-handed, but not sure how to target them w/ the id since they're in shadow-root */
+spacer {
+  display: none;
+}
+
 /*  Alltabs button  */
 #TabsToolbar-customization-target {
   counter-reset: tabCount;
