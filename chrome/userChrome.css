@@ -128,11 +128,10 @@
 .tabbrowser-tab {
   opacity: var(--OpacityMin);
 }
-/*TODO: This overrides the transition applied by FF for drag-and-drop feature, fix needed.*/
-/* .tabbrowser-tab:not([pinned]) {
+#tabbrowser-tabs:not([movingtab]) .tabbrowser-tab:not([pinned]) {
   transition: min-width 100ms ease-out, max-width 100ms ease-out,
     opacity 0.2s ease-out !important;
-} */
+}
 .tabbrowser-tab:not([visuallyselected], [multiselected]) {
   filter: grayscale(100%);
 }
