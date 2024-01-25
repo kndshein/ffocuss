@@ -447,6 +447,12 @@
   appearance: none !important;
 }
 
+/* When `Alt` menu is open, push the - [] X buttons to the right */
+#toolbar-menubar {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* The vertical lines in overflow menu of the tabs -- this is a bit heavy-handed, but not sure how to target them w/ the id since they're in shadow-root */
 spacer {
   display: none;
