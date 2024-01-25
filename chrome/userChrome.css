@@ -693,9 +693,12 @@ findbar .close-icon {
   opacity: 0;
 }
 .devtools-toolbox-side-iframe {
-  margin-top: -10px;
   border-radius: 10px;
 }
+[BookmarksToolbarOverlapsBrowser]:has(#PersonalToolbar[collapsed='false'])
+  .devtools-toolbox-side-iframe {
+  margin-top: 10px;
+} /* Adjust for the space when 'Only Show on New Tab' is used */
 
 #customization-panelWrapper {
   max-width: 30em !important;
