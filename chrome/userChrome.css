@@ -105,6 +105,9 @@
   #nav-bar {
     transition: margin-top 0.25s !important;
   }
+  #tabbrowser-tabs {
+    margin-left: 10px;
+  }
 }
 #nav-bar,
 #PersonalToolbar {
