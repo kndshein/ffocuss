@@ -129,10 +129,10 @@
   opacity: var(--OpacityMin);
 }
 /*TODO: This overrides the transition applied by FF for drag-and-drop feature, fix needed.*/
-.tabbrowser-tab:not([pinned]) {
+/* .tabbrowser-tab:not([pinned]) {
   transition: min-width 100ms ease-out, max-width 100ms ease-out,
     opacity 0.2s ease-out !important;
-}
+} */
 .tabbrowser-tab:not([visuallyselected], [multiselected]) {
   filter: grayscale(100%);
 }
@@ -496,6 +496,11 @@ spacer {
 #urlbar:not(:hover):not([breakout][breakout-extend]) > #urlbar-background {
   box-shadow: none !important;
   background: #0000 !important;
+}
+
+/* Removes the box shadow when url bar is focused */
+#urlbar[focused='true'] > #urlbar-background {
+  box-shadow: none !important;
 }
 
 /*  Urlbar popup thing  */
