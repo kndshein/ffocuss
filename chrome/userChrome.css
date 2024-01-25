@@ -151,6 +151,7 @@
   border: 1px solid color-mix(in srgb, var(--toolbar-color) 60%, transparent);
 }
 
+/* Tweak sound label on tabs */
 .tab-secondary-label {
   display: none !important;
 }
@@ -602,7 +603,8 @@ spacer {
     var(--toolbarseparator-color) 50%,
     var(--toolbarseparator-color) 50%,
     transparent 90%
-  );
+  ) !important;
+  opacity: var(--OpacityMin);
 }
 
 /*  Rounded corner in pages  */ /*  layout.css.has-selector.enabled  */
